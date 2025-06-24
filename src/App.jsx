@@ -4,7 +4,7 @@ import PageContent from './PageContent'
 
 const App = () => {
   return (
-    <div className="bg-gradient-to-r from-gray-700 via-gray-900 to-black text-white min-h-screen">
+    <div className="bg-gradient-to-r from-gray-700 via-gray-900 to-black text-white min-h-screen overflow-hidden pt-2rem lg:pt-4.5rem">
     <Navbar/>
     <PageContent/>
     </div>
