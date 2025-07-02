@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import { CgMenu } from "react-icons/cg";
 import { useLocation } from "react-router-dom";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
+import { RxCross2 } from "react-icons/rx";
 
-const Navbar = () => {
+const Navbar = ({ openNavigation, setOpenNavigation }) => {
   const pathname = useLocation();
 
-  const [openNavigation, setOpenNavigation] = useState(false);
+  // const [openNavigation, setOpenNavigation] = useState(false);
 
   const toggleNavigation = () => {
     if (openNavigation) {
@@ -27,15 +28,15 @@ const Navbar = () => {
   return (
     // bg-[#FFFFFF30] - old bg
     <header className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-gray-700 via-gray-900 to-black backdrop-blur-md">
-      <nav className="flex justify-between items-center px-4 h-16 lg:">
+      <nav className="flex justify-between items-center px-4 h-16">
         <a
           href="#home"
           className="text-2xl font-semibold font-serif font-stretch-extra-condensed hover:text-green-500"
         >
-          ABSOLUTE CINEMA.
+          ABSOLUTE CINEMA
         </a>
         <div
-          className={`absolute top-[64px] left-0 w-full py-2 text-lg flex-col gap-6 items-center ${
+          className={`absolute top-[64px] left-0 w-full py-2 text-lg flex-col gap-6 items-center bg-gradient-to-r from-gray-700 via-gray-900 to-black lg:bg-transparent lg:from-transparent lg:via-transparent lg:to-transparent ${
             openNavigation ? "flex" : "hidden"
           } lg:flex lg:flex-row lg:static lg:w-auto lg:bg-transparent`}
         >
@@ -158,7 +159,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div onClick={toggleNavigation} className="lg:hidden">
-          <CgMenu className={`text-2xl hover:cursor-pointer`} />
+          {openNavigation ? <RxCross2 className={`text-2xl hover:cursor-pointer font-bold`}/> : <CgMenu className={`text-2xl hover:cursor-pointer`} />}
         </div>
       </nav>
     </header>

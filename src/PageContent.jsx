@@ -5,9 +5,11 @@ import Search from './sections/Search'
 import About from './sections/About'
 import Guide from './sections/Guide'
 
-const PageContent = () => {
+const PageContent = ({ openNavigation }) => {
+  const basePadding = '4rem';
+  const openPadding = '12rem';
   return (
-    <div className="mt-[3rem]" id='home'>
+    <div id='home' style={{ paddingTop: openNavigation ? openPadding : basePadding }} className='lg:mt-[-10rem]'>
       <Home/>
       <Random/>
       <Guide/>
