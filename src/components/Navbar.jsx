@@ -30,7 +30,7 @@ const Navbar = ({ openNavigation, setOpenNavigation }) => {
     <header className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-gray-700 via-gray-900 to-black backdrop-blur-md">
       <nav className="flex justify-between items-center px-4 h-16">
         <a
-          href="#home"
+          href="/"
           className="text-2xl font-semibold font-serif font-stretch-extra-condensed hover:text-green-500"
         >
           ABSOLUTE CINEMA
@@ -43,7 +43,7 @@ const Navbar = ({ openNavigation, setOpenNavigation }) => {
           <ul className="flex flex-col gap-6 items-center lg:flex-row lg:gap-8 ">
             <a href="#home" onClick={handleClick}>
               <li className="hover:cursor-pointer hover:text-green-500 font-semibold">
-                {pathname.hash === "#home" ? (
+                {pathname.hash === "" ? (
                   <span className="relative inline-block text-green-500">
                     Home
                     <svg

@@ -1,23 +1,77 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import SpeedTestButton from "../helpers/GenerateButton";
+import React, { useState } from "react";
+import GenerateButton from "./../helpers/GenerateButton";
+import { useNavigate } from "react-router-dom";
 
 const Random = () => {
+  
+  const navigate = useNavigate();
+
+  const [data, setData] = useState({
+    genre: "",
+    duration: "",
+    language: "",
+  });
+
+  let { genre, duration, language } = data;
+
+  const getter = (event) => {
+    let element = event.target;
+    let value = element.value;
+    let key = element.name;
+    setData({ ...data, [key]: value });
+  };
+
+  const handleGenerate = async () => {
+    // fetching movies based on filters
+    const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
+    // console.log(data);
+    let url =
+      `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}` +
+      `&vote_count.gte=1000&sort_by=vote_average.desc`;
+    if (genre) url += `&with_genres=${genre}`;
+    if (language) url += `&with_original_language=${language}`;
+
+    if (duration === "short") url += `&with_runtime.lte=90`;
+    if (duration === "medium")
+      url += `&with_runtime.gte=90&with_runtime.lte=120`;
+    if (duration === "long") url += `&with_runtime.gte=120`;
+
+    const page = Math.floor(Math.random() * 10) + 1;
+    url += `&page=${page}`;
+
+    try {
+      let response = await fetch(url);
+      let { results = [] } = await response.json();
+      console.log(results);
+      if (!results.length) {
+        alert("No movies found—try loosening the filters a bit.");
+        return;
+      }
+      const movie = results[Math.floor(Math.random() * results.length)];
+      navigate("/random-result", { state: { movie } });
+    } catch (err) {
+      console.error("Error fetching movie:", err);
+      alert("Something went wrong. Please try again.");
+    }
+  };
   return (
     <div
       id="random"
-      className="min-h-screen scroll-mt-16 flex flex-col items-center gap-28"
+      className="min-h-screen scroll-mt-18 flex flex-col items-center gap-16 lg:flex-wrap"
     >
-      <section className="font-semibold text-2xl">
+      <section className="font-semibold text-3xl">
         Random movie generator
       </section>
       <section>
-        <NavLink>
-          <SpeedTestButton />
-        </NavLink>
+        <div
+          className="flex items-center justify-center"
+          onClick={handleGenerate}
+        >
+          <GenerateButton />
+        </div>
       </section>
       <section className="flex gap-10 flex-col font-semibold text-md">
-        <article className="">Filters</article>
+        <article className="text-lg">Filters</article>
         <article className="flex flex-col gap-4 text-white">
           <div>
             <label htmlFor="genre" className="block mb-1 font-medium">
@@ -25,7 +79,10 @@ const Random = () => {
             </label>
             <select
               id="genre"
-              className="p-2 rounded text-white w-48"
+              name="genre"
+              className="p-1 rounded text-white bg-black/90 w-48 text-sm"
+              onChange={getter}
+              value={genre}
             >
               <option value="">All Genres</option>
               <option value="28">Action</option>
@@ -39,17 +96,33 @@ const Random = () => {
             </select>
           </div>
           <div>
-            <label htmlFor="duration">Duration</label>
-            <select name="duration" id="duration">
+            <label htmlFor="duration" className="block mb-1 font-medium">
+              Duration
+            </label>
+            <select
+              name="duration"
+              id="duration"
+              className="p-1 rounded text-white bg-black/90 w-48 text-sm"
+              onChange={getter}
+              value={duration}
+            >
               <option value="">Any Length</option>
               <option value="short">Under 90 min</option>
               <option value="medium">90-120 min</option>
               <option value="long">Over 120 min</option>
             </select>
           </div>
-          <div>
-            <label htmlFor="language">Language</label>
-            <select name="language" id="language">
+          {/* <div>
+            <label htmlFor="language" className="block mb-1 font-medium">
+              Language
+            </label>
+            <select
+              name="language"
+              id="language"
+              className="p-1 rounded text-white bg-black/90 w-48 text-sm"
+              onChange={getter}
+              value={language}
+            >
               <option value="">Any Language</option>
               <option value="en">English</option>
               <option value="hi">Hindi</option>
@@ -62,7 +135,7 @@ const Random = () => {
               <option value="es">Spanish</option>
               <option value="it">Italian</option>
             </select>
-          </div>
+          </div> */}
         </article>
       </section>
     </div>
