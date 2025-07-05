@@ -8,7 +8,7 @@ const Home = () => {
           Welcome, Agent 007
         </h1>
         <p className="text-center text-gray-400 mt-2 lg:text-left">
-          Scroll down to explore!
+          Scroll down to explore and watch some quality cinema!
         </p>
       </section>
       <section>

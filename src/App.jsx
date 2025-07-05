@@ -21,6 +21,7 @@ const App = () => {
 
         {/* Dedicated result page used on mobile */}
         <Route path="/random-result" element={<RandomResult />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );

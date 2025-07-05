@@ -3,7 +3,6 @@ import GenerateButton from "./../helpers/GenerateButton";
 import { useNavigate } from "react-router-dom";
 
 const Random = () => {
-  
   const navigate = useNavigate();
 
   const [data, setData] = useState({
@@ -42,13 +41,16 @@ const Random = () => {
     try {
       let response = await fetch(url);
       let { results = [] } = await response.json();
-      console.log(results);
       if (!results.length) {
         alert("No movies found—try loosening the filters a bit.");
         return;
       }
       const movie = results[Math.floor(Math.random() * results.length)];
-      navigate("/random-result", { state: { movie } });
+      const detailsRes = await fetch(
+        `https://api.themoviedb.org/3/movie/${movie.id}?api_key=${API_KEY}&append_to_response=credits`
+      );
+      const fullMovie = await detailsRes.json();
+      navigate("/random-result", { state: { fullMovie } });
     } catch (err) {
       console.error("Error fetching movie:", err);
       alert("Something went wrong. Please try again.");
