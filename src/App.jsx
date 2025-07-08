@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar";
 import PageContent from "./PageContent"; // your SPA sections
 import RandomResult from "./pages/RandomResult"; // the mobile result page
 import NotFound from "./pages/NotFound";
-import { Toaster } from "./../node_modules/react-hot-toast/src/components/toaster";
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
   const location = useLocation();
@@ -13,7 +13,17 @@ const App = () => {
 
   return (
     <>
-      <Toaster />
+      <Toaster
+        position="top-center"
+        toastOptions={{
+          style: {
+            background: "rgba(0, 0, 0, 0.9)",
+            color: "#fff",
+            border: "1px solid #4b5563",
+            borderRadius: "8px",
+          },
+        }}
+      />
       <div className="bg-gradient-to-r from-gray-700 via-gray-900 to-black text-white min-h-screen overflow-hidden pt-8">
         {location.pathname !== "/random-result" && (
           <Navbar

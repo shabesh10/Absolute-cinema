@@ -11,7 +11,6 @@ const About = () => {
           <img
             src="src\assets\tmdb_logo.svg"
             alt="TMDB"
-            srcset=""
             className="h-40 w-40"
           />
         </a>

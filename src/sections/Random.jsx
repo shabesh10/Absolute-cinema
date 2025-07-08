@@ -84,6 +84,7 @@ const Random = () => {
               className="p-1 rounded text-white bg-black/90 w-48 text-sm border border-gray-600 focus:border-gray-400 focus:outline-none transition-colors"
               onChange={getter}
               value={genre}
+              name="genre"
             >
               <option value="">All Genres</option>
               <option value="28">Action</option>
@@ -103,7 +104,8 @@ const Random = () => {
             <select
               className="p-1 rounded text-white bg-black/90 w-48 text-sm border border-gray-600 focus:border-gray-400 focus:outline-none transition-colors"
               onChange={getter}
-              value={genre}
+              value={duration}
+              name="duration"
             >
               <option value="">Any Length</option>
               <option value="short">Under 90 min</option>
