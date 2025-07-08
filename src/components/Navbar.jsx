@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CgMenu } from "react-icons/cg";
 import { useLocation } from "react-router-dom";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
-import { RxCross2 } from "react-icons/rx";
+import { RxCross2 } from "react-icons/rx"; 
 
 const Navbar = ({ openNavigation, setOpenNavigation }) => {
   const pathname = useLocation();
@@ -28,22 +28,22 @@ const Navbar = ({ openNavigation, setOpenNavigation }) => {
   return (
     // bg-[#FFFFFF30] - old bg
     <header className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-gray-700 via-gray-900 to-black backdrop-blur-md">
-      <nav className="flex justify-between items-center px-4 h-16">
+      <nav className="flex justify-between items-center px-4 h-16 md:px-6">
         <a
           href="/"
-          className="text-2xl font-semibold font-serif font-stretch-extra-condensed hover:text-green-500"
+          className="text-3xl font-semibold font-serif font-stretch-extra-condensed hover:text-green-500"
         >
-          ABSOLUTE CINEMA
+          Absolute Cinema
         </a>
         <div
-          className={`absolute top-[64px] left-0 w-full py-2 text-lg flex-col gap-6 items-center bg-gradient-to-r from-gray-700 via-gray-900 to-black lg:bg-transparent lg:from-transparent lg:via-transparent lg:to-transparent ${
+          className={`absolute top-[74px] left-0 w-full py-2 text-lg flex-col gap-6 items-center bg-gradient-to-r from-gray-700 via-gray-900 to-black lg:bg-transparent lg:from-transparent lg:via-transparent lg:to-transparent ${
             openNavigation ? "flex" : "hidden"
           } lg:flex lg:flex-row lg:static lg:w-auto lg:bg-transparent`}
         >
           <ul className="flex flex-col gap-6 items-center lg:flex-row lg:gap-8 ">
             <a href="#home" onClick={handleClick}>
               <li className="hover:cursor-pointer hover:text-green-500 font-semibold">
-                {pathname.hash === "" ? (
+                {(pathname.hash === "" || pathname.hash === "#home") ? (
                   <span className="relative inline-block text-green-500">
                     Home
                     <svg

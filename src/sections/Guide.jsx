@@ -2,7 +2,7 @@ import React from 'react'
 
 const Guide = () => {
   return (
-    <div id='guide'>Guide</div>
+    <div id='guide' className='min-h-screen scroll-mt-18'>Guide</div>
   )
 }
 

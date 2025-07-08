@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import GenerateButton from "./../helpers/GenerateButton";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const Random = () => {
   const navigate = useNavigate();
@@ -42,7 +43,7 @@ const Random = () => {
       let response = await fetch(url);
       let { results = [] } = await response.json();
       if (!results.length) {
-        alert("No movies found—try loosening the filters a bit.");
+        toast.error("No movies found—try loosening the filters a bit.");
         return;
       }
       const movie = results[Math.floor(Math.random() * results.length)];
@@ -53,13 +54,13 @@ const Random = () => {
       navigate("/random-result", { state: { fullMovie } });
     } catch (err) {
       console.error("Error fetching movie:", err);
-      alert("Something went wrong. Please try again.");
+      toast.error("Failed to fetch movie. Please try again.");
     }
   };
   return (
     <div
       id="random"
-      className="min-h-screen scroll-mt-18 flex flex-col items-center gap-16 lg:flex-wrap"
+      className="h-screen flex flex-col justify-center items-center gap-16 lg:flex-wrap"
     >
       <section className="font-semibold text-3xl">
         Random movie generator
@@ -80,9 +81,7 @@ const Random = () => {
               Genre
             </label>
             <select
-              id="genre"
-              name="genre"
-              className="p-1 rounded text-white bg-black/90 w-48 text-sm"
+              className="p-1 rounded text-white bg-black/90 w-48 text-sm border border-gray-600 focus:border-gray-400 focus:outline-none transition-colors"
               onChange={getter}
               value={genre}
             >
@@ -102,11 +101,9 @@ const Random = () => {
               Duration
             </label>
             <select
-              name="duration"
-              id="duration"
-              className="p-1 rounded text-white bg-black/90 w-48 text-sm"
+              className="p-1 rounded text-white bg-black/90 w-48 text-sm border border-gray-600 focus:border-gray-400 focus:outline-none transition-colors"
               onChange={getter}
-              value={duration}
+              value={genre}
             >
               <option value="">Any Length</option>
               <option value="short">Under 90 min</option>
@@ -114,7 +111,7 @@ const Random = () => {
               <option value="long">Over 120 min</option>
             </select>
           </div>
-          {/* <div>
+          <div>
             <label htmlFor="language" className="block mb-1 font-medium">
               Language
             </label>
@@ -137,7 +134,7 @@ const Random = () => {
               <option value="es">Spanish</option>
               <option value="it">Italian</option>
             </select>
-          </div> */}
+          </div>
         </article>
       </section>
     </div>

@@ -15,7 +15,7 @@ const RandomResult = () => {
     <div className="lg:block lg:min-h-screen fixed inset-0 overflow-hidden z-50"
     style={{
         // Only apply background image on lg and up
-        ...(window.innerWidth >= 1024
+        ...(window.innerWidth >= 0
           ? {
               backgroundImage: `linear-gradient(to bottom, rgba(20,20,30,0.85) 0%, rgba(20,20,30,0.95) 60%), url(${backdropUrl})`,
               backgroundSize: "cover",
@@ -68,7 +68,7 @@ const RandomResult = () => {
       </div> */}
       <div
         className="flex text-xl cursor-pointer absolute top-8 right-4 lg:top-8 lg:right-[11.5vw]"
-        title="Go Back"
+        title="Go Home"
       >
         <IoHomeSharp onClick={() => navigate("/")} />
       </div>
