@@ -212,9 +212,7 @@ const Search = () => {
         {/* No Results Message */}
         {searchResults.length === 0 && searchQuery && !loading && (
           <div className="flex justify-center items-center mt-8">
-            <div className="text-lg text-gray-400">
-              No movies found for "{searchQuery}"
-            </div>
+            
           </div>
         )}
       </section>

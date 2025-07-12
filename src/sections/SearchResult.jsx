@@ -27,10 +27,10 @@ const SearchResult = () => {
     );
   }
 
-  const backdropUrl = `https://image.tmdb.org/t/p/original/${movie.backdrop_path}`;
+  const backdropUrl = `https://image.tmdb.org/t/p/w1280/${movie.backdrop_path}`; // Changed from 'original' to 'w1280' for faster loading
 
   return (
-    <div className="lg:block lg:min-h-screen fixed inset-0 overflow-hidden z-[9999]"
+    <div className="lg:block lg:min-h-screen fixed inset-0 overflow-hidden z-[9999] bg-gray-900" // Added bg-gray-900 fallback while backdrop loads
       style={{
         // Only apply background image on lg and up
         ...(window.innerWidth >= 0
@@ -72,13 +72,13 @@ const SearchResult = () => {
         </section>
 
         <div
-          className="flex text-xl cursor-pointer absolute top-8 right-4 lg:top-8 lg:right-[11.5vw]"
+          className="text-xl cursor-pointer absolute top-8 right-4 lg:top-8 lg:right-[11.5vw]" // Removed 'flex' class
           title="Go Home"
         >
           <IoHomeSharp onClick={() => navigate("/")} />
         </div>
         <div
-          className="flex text-2xl cursor-pointer absolute top-8 left-4 lg:top-8 lg:left-[10.8vw]"
+          className="text-2xl cursor-pointer absolute top-8 left-4 lg:top-8 lg:left-[10.8vw]" // Removed 'flex' class
           title="Go Back"
         >
           <IoArrowBackSharp onClick={() => navigate(-1)} />
