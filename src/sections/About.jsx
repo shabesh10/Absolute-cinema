@@ -14,7 +14,7 @@ const About = () => {
             className="h-40 w-40"
           />
         </a>
-        <p className="text-center">This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+        <p className="text-center text-sm px-6 md:text-base">This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
         </div>
       </section>
       <section>
@@ -22,7 +22,7 @@ const About = () => {
         <footer className="text-center text-sm text-gray-400 py-6">
           <p>
             Built by{" "}
-            <span className="font-semibold text-gray-300">Shabeshvaran</span>{" "}
+            <span className="font-semibold text-gray-200">Shabeshvaran S</span>{" "}
             &copy; {year} —{" "}
             <a
               href="https://github.com/shabesh10"

@@ -1,4 +1,3 @@
-// App.jsx
 import React, { useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
@@ -6,6 +5,7 @@ import PageContent from "./PageContent"; // your SPA sections
 import RandomResult from "./pages/RandomResult"; // the mobile result page
 import NotFound from "./pages/NotFound";
 import { Toaster } from "react-hot-toast";
+import SearchResult from "./sections/SearchResult";
 
 const App = () => {
   const location = useLocation();
@@ -38,6 +38,7 @@ const App = () => {
 
           {/* Dedicated result page used on mobile */}
           <Route path="/random-result" element={<RandomResult />} />
+          <Route path="/search-result" element={<SearchResult/>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

@@ -28,8 +28,15 @@ const Random = () => {
     let url =
       `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}` +
       `&vote_count.gte=1000&sort_by=vote_average.desc`;
+    if (language) {
+      if (language === "en" || language === "fr" || language === "es" || language === "it") {
+        url += `&with_original_language=${language}`;
+      } else {
+        url = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`;
+        url += `&with_original_language=${language}`;
+      }
+    }
     if (genre) url += `&with_genres=${genre}`;
-    if (language) url += `&with_original_language=${language}`;
 
     if (duration === "short") url += `&with_runtime.lte=90`;
     if (duration === "medium")
@@ -126,8 +133,8 @@ const Random = () => {
             >
               <option value="">Any Language</option>
               <option value="en">English</option>
-              <option value="hi">Hindi</option>
               <option value="ta">Tamil</option>
+              <option value="hi">Hindi</option>
               <option value="te">Telugu</option>
               <option value="ml">Malayalam</option>
               <option value="kn">Kannada</option>
