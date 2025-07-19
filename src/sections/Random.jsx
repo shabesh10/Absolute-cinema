@@ -92,6 +92,7 @@ const Random = () => {
               onChange={getter}
               value={genre}
               name="genre"
+              id="genre"
             >
               <option value="">All Genres</option>
               <option value="28">Action</option>
@@ -113,6 +114,7 @@ const Random = () => {
               onChange={getter}
               value={duration}
               name="duration"
+              id="duration"
             >
               <option value="">Any Length</option>
               <option value="short">Under 90 min</option>

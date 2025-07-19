@@ -27,7 +27,7 @@ const Navbar = ({ openNavigation, setOpenNavigation }) => {
       <nav className="flex justify-between items-center px-4 h-16 md:px-6" >
         <a
           href="/"
-          className="text-3xl font-semibold font-stretch-extra-condensed hover:text-green-500"
+          className="text-[26px] md:text-[28px] font-semibold font-stretch-extra-condensed hover:text-green-500"
           id="logo"
         >
           Absolute Cinema
