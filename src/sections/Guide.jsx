@@ -56,7 +56,9 @@ const Guide = () => {
   };
 
   return (
-    <div id="guide" className="min-h-screen scroll-mt-18">
+    <div id="guide" className="min-h-screen scroll-mt-18 flex flex-col items-center justify-center">
+      <div>
+      <h1 className="font-semibold text-2xl text-center pt-20">Ultimate Movie Binge Guide</h1>
       <div className="max-w-[1400px] h-[780px] w-full m-auto py-16 px-4 relative flex items-center justify-center">
         <div className="w-full h-full rounded-xl">
           <Slide
@@ -78,7 +80,7 @@ const Guide = () => {
         >
           <BsChevronCompactRight size={30} />
         </div>
-        <div className="absolute flex bottom-60">
+        <div className="absolute flex bottom-74">
           {data_arr.map((slide, index) => (
             <div
               key={index}
@@ -89,6 +91,7 @@ const Guide = () => {
             </div>
           ))}
         </div>
+      </div>
       </div>
     </div>
   );

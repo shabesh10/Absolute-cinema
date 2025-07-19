@@ -2,7 +2,7 @@ import React from "react";
 
 const Slide = ({ title = "Untitled", desc = "", imageUrl = "", url = "" }) => {
   return (
-    <div className="flex flex-col items-center text-center bg-slate-800 text-white p-6 rounded-xl shadow-lg transition-all duration-300">
+    <div className="flex flex-col items-center text-center bg-slate-800 text-white p-4 rounded-xl shadow-lg transition-all duration-300">
       <img
         src={imageUrl || "src\\assets\\letterboxd-rating.webp"}
         alt={`${title} related image`}

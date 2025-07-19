@@ -28,3 +28,16 @@ html {
   scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
 }
 
+body {
+  font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+
+#logo {
+  font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}

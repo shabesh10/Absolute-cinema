@@ -24,10 +24,11 @@ const Navbar = ({ openNavigation, setOpenNavigation }) => {
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-gray-700 via-gray-900 to-black backdrop-blur-md">
-      <nav className="flex justify-between items-center px-4 h-16 md:px-6">
+      <nav className="flex justify-between items-center px-4 h-16 md:px-6" >
         <a
           href="/"
-          className="text-3xl font-semibold font-serif font-stretch-extra-condensed hover:text-green-500"
+          className="text-3xl font-semibold font-stretch-extra-condensed hover:text-green-500"
+          id="logo"
         >
           Absolute Cinema
         </a>

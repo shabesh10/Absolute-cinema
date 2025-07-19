@@ -124,6 +124,7 @@ const Search = () => {
 
   return (
     <div className="scroll-container h-[calc(100vh-74px)] w-[80%] mx-auto overflow-y-scroll">
+
       <div id="search" className="scroll-mt-24" />
 
       <section className="w-full">
@@ -137,7 +138,7 @@ const Search = () => {
               type="text"
               name="searchbox"
               id="searchbox"
-              placeholder="Search for a movie"
+              placeholder="Search for a movie..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               onKeyPress={handleKeyPress}
@@ -211,9 +212,7 @@ const Search = () => {
 
         {/* No Results Message */}
         {searchResults.length === 0 && searchQuery && !loading && (
-          <div className="flex justify-center items-center mt-8">
-            
-          </div>
+          <div className="flex justify-center items-center mt-8"></div>
         )}
       </section>
     </div>
