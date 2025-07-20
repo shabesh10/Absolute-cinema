@@ -21,9 +21,38 @@
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@400..900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/scrollreveal@4"></script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <!-- for animation: -->
+    <script>
+      function initScrollReveal() {
+        // Check if elements exist
+        const imageEl = document.querySelector("#image-transform");
+        const textEl = document.querySelector("#text-transform");
+
+        if (imageEl && textEl) {
+          console.log("Elements found! Initializing ScrollReveal...");
+
+          const scroll = ScrollReveal({
+            reset: true,
+            duration: 2600,
+            distance: "60px",
+          });
+
+          scroll.reveal("#image-transform", { delay: 400, origin: "top" });
+          scroll.reveal("#text-transform", { delay: 300, origin: "left" });
+        } else {
+          // Elements not ready yet, try again in 100ms
+          console.log("Elements not found, retrying...");
+          setTimeout(initScrollReveal, 100);
+        }
+      }
+
+      // Start trying to initialize after a short delay
+      setTimeout(initScrollReveal, 100);
+    </script>
   </body>
 </html>

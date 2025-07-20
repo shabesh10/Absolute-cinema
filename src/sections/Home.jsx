@@ -20,7 +20,7 @@ const Home = () => {
       id="home"
       className="h-screen w-screen mt-32 flex flex-col items-center px-4 gap-14 lg:flex-row lg:justify-around"
     >
-      <section>
+      <section id="text-transform">
         <h1 className="text-3xl md:text-5xl font-semibold text-center">
           {greet}
         </h1>
@@ -28,7 +28,7 @@ const Home = () => {
           Scroll down to explore and watch some quality cinema!
         </p>
       </section>
-      <section>
+      <section id="image-transform">
         <img
           src="src/assets/scorcese.jpg"
           alt="Scorcese Image"
