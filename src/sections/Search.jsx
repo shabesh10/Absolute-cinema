@@ -28,7 +28,7 @@ const Search = () => {
         }
 
         let data = await response.json();
-        console.log(data);
+        // console.log(data);
 
         if (data.results && data.results.length > 0) {
           setSearchResults(data.results.slice(0, 10)); // Limit to top 10
