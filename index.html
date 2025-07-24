@@ -34,7 +34,7 @@
         const textEl = document.querySelector("#text-transform");
 
         if (imageEl && textEl) {
-          console.log("Elements found! Initializing ScrollReveal...");
+          // console.log("Elements found! Initializing ScrollReveal...");
 
           const scroll = ScrollReveal({
             reset: true,
@@ -42,12 +42,21 @@
             distance: "60px",
           });
 
+          // const scroll2 = ScrollReveal({
+          //   reset: true,
+          //   distance: "30px",
+          //   duration: 1200,
+          //   origin: "bottom",
+          //   opacity: 0,
+          //   easing: "ease-in-out",
+          // });
+
           scroll.reveal("#image-transform", { delay: 400, origin: "top" });
           scroll.reveal("#text-transform", { delay: 300, origin: "left" });
           scroll.reveal("#random");
           scroll.reveal("#guide");
           scroll.reveal("#search");
-          scroll.reveal("#about")
+          scroll.reveal("#about");
         } else {
           // Elements not ready yet, try again in 100ms
           console.log("Elements not found, retrying...");
