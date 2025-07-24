@@ -1,4 +1,5 @@
 import React from "react";
+import scorcese from "../assets/scorcese.jpg";
 const greets = [
   "Welcome, Agent 007",
   "Welcome, Avenger",
@@ -30,7 +31,7 @@ const Home = () => {
       </section>
       <section id="image-transform">
         <img
-          src="src/assets/scorcese.jpg"
+          src={scorcese}
           alt="Scorcese Image"
           className="rounded-xl lg:rounded-full md:h-150 md:w-150 lg:h-[35rem] lg:w-[35rem] border-2 object-cover hover:opacity-80 transition-opacity duration-300"
         />

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import Slide from "./Slide";
+import letterboxd from "../assets/letterboxd-rating.webp";
 
 const data_arr = [
   {
@@ -12,7 +13,7 @@ const data_arr = [
   {
     title: "Letterboxd Top 250",
     desc: "Curated by the most active cinephiles online, this list highlights beloved and rewatchable films with strong cult followings.",
-    imageUrl: "src/assets/letterboxd-rating.webp",
+    imageUrl: { letterboxd },
     url: "https://letterboxd.com/jack/list/official-top-250-films-with-the-most-fans/"
   },
   {

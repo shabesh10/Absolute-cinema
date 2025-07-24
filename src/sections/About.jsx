@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "../assets/tmdb_logo.svg";
 
 const About = () => {
   const year = new Date().getFullYear();
@@ -9,7 +10,7 @@ const About = () => {
           
         <a href="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer">
           <img
-            src="src\assets\tmdb_logo.svg"
+            src={logo}
             alt="TMDB"
             className="h-40 w-40"
           />
