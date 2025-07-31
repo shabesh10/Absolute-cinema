@@ -1,3 +1,4 @@
+import letterboxd from "../assets/letterboxd-rating.webp";
 const Slide = ({ title, desc, imageUrl, url }) => (
   <div className="relative w-full h-full bg-gradient-to-r from-gray-700 via-gray-900 to-black border border-gray-600 overflow-hidden">
     <div 

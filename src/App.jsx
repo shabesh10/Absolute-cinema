@@ -1,15 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import PageContent from "./PageContent"; // your SPA sections
 import RandomResult from "./pages/RandomResult"; // the mobile result page
 import NotFound from "./pages/NotFound";
-import { Toaster } from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import SearchResult from "./sections/SearchResult";
 
 const App = () => {
   const location = useLocation();
   const [openNavigation, setOpenNavigation] = useState(false);
+  useEffect(() => {
+    toast.error(
+      "If you are using Jio network, Random generator won't work due to network restrictions. Please try using a different network.",
+      { duration: 6500,
+        icon: "⚠️",
+       }
+    );
+  }, []);
 
   return (
     <>
@@ -38,7 +46,7 @@ const App = () => {
 
           {/* Dedicated result page used on mobile */}
           <Route path="/random-result" element={<RandomResult />} />
-          <Route path="/search-result" element={<SearchResult/>} />
+          <Route path="/search-result" element={<SearchResult />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
