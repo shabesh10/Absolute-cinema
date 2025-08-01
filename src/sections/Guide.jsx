@@ -13,7 +13,7 @@ const data_arr = [
   {
     title: "Letterboxd Top 250",
     desc: "Curated by the most active cinephiles online, this list highlights beloved and rewatchable films with strong cult followings.",
-    imageUrl: { letterboxd },
+    imageUrl: letterboxd,
     url: "https://letterboxd.com/jack/list/official-top-250-films-with-the-most-fans/"
   },
   {
