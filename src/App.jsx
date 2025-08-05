@@ -6,6 +6,7 @@ import RandomResult from "./pages/RandomResult"; // the mobile result page
 import NotFound from "./pages/NotFound";
 import toast, { Toaster } from "react-hot-toast";
 import SearchResult from "./sections/SearchResult";
+import DynamicTitleUpdate from "./DynamicTitleUpdate";
 
 const App = () => {
   const location = useLocation();
@@ -39,7 +40,7 @@ const App = () => {
             setOpenNavigation={setOpenNavigation}
           />
         )}
-
+          <DynamicTitleUpdate/>
         <Routes>
           {/* Root path loads your scroll‑based SPA */}
           <Route path="/" element={<PageContent />} />

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://absolute-cinemaa.netlify.app/sitemap.xml

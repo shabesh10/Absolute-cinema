@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://absolute-cinemaa.netlify.app/</loc>
+  </url>
+
+  <url>
+    <loc>https://absolute-cinemaa.netlify.app/#home</loc>
+  </url>
+
+  <url>
+    <loc>https://absolute-cinemaa.netlify.app/#random</loc>
+  </url>
+
+  <url>
+    <loc>https://absolute-cinemaa.netlify.app/#guide</loc>
+  </url>
+
+  <url>
+    <loc>https://absolute-cinemaa.netlify.app/#search</loc>
+  </url>
+
+  <url>
+    <loc>https://absolute-cinemaa.netlify.app/#about</loc>
+  </url>
+
+  <url>
+    <loc>https://absolute-cinemaa.netlify.app/random-result</loc>
+  </url>
+
+  <url>
+    <loc>https://absolute-cinemaa.netlify.app/search-result</loc>
+  </url>
+
+</urlset>
